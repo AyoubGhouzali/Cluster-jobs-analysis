@@ -7,9 +7,10 @@ HPC_DB <- dbConnect(MySQL(), user="root", db= "hpc-marwan", host="localhost")
 allTables <- dbListTables(HPC_DB)
 
 #Importer les données sur le cluster
-Jobs23=read.table("C:/Users/ayoub/Desktop/Stage 1A/Raw data/JOBS_2023.csv", sep="|", header=TRUE)
+data_dir <- file.path(dirname(normalizePath(".")), "data")
 
-Jobs24=read.table("C:/Users/ayoub/Desktop/Stage 1A/Raw data/JOBS_2024.csv", sep="|", header=TRUE)
+Jobs23 <- read.table(file.path(data_dir, "JOBS_2023.csv"), sep="|", header=TRUE)
+Jobs24 <- read.table(file.path(data_dir, "JOBS_2024.csv"), sep="|", header=TRUE)
 
 #combiner des deux data frames et éviter les doublons
 merged_Jobs <- rbind(Jobs23, Jobs24)
