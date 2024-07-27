@@ -13,12 +13,14 @@ import os
 st.set_page_config(layout="wide", page_title="Cluster Jobs Analysis", )
 st.sidebar.success("Select a page")
 
-# Read data
-jobs_univ = pd.read_csv("C:/Users/ayoub/Desktop/Stage 1A/Data frames/Jobs_univ.csv", encoding='latin1')
-waittime = pd.read_csv("C:/Users/ayoub/Desktop/Stage 1A/Data frames/waittime.csv", encoding='latin1')
-waittime_boxp_par = pd.read_csv("C:/Users/ayoub/Desktop/Stage 1A/Data frames/waittime_boxp_par.csv", encoding='latin1')
-waittime_boxp_ncpus = pd.read_csv("C:/Users/ayoub/Desktop/Stage 1A/Data frames/waittime_boxp_ncpus.csv",
-                                  encoding='latin1')
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+# Use relative paths to read the CSV files
+jobs_univ = pd.read_csv(os.path.join(data_dir, "Jobs_univ.csv"), encoding='latin1')
+waittime = pd.read_csv(os.path.join(data_dir, "waittime.csv"), encoding='latin1')
+waittime_boxp_par = pd.read_csv(os.path.join(data_dir, "waittime_boxp_par.csv"), encoding='latin1')
+waittime_boxp_ncpus = pd.read_csv(os.path.join(data_dir, "waittime_boxp_ncpus.csv"), encoding='latin1')
+
 
 col = st.columns((1.5, 4.5, 2), gap='medium')
 
