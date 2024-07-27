@@ -9,9 +9,9 @@ def load_image(image_path):
     return encoded_image
 
 # Load and encode the images
-image1_path = os.path.join("data", "Three_dots.png")
-image2_path = os.path.join("data", "print.png")
-image3_path = os.path.join("data", "print_interface.png")
+image1_path = os.path.join("screenshots", "Three_dots.png")
+image2_path = os.path.join("screenshots", "print.png")
+image3_path = os.path.join("screenshots", "print_interface.png")
 
 image1_data = load_image(image1_path)
 image2_data = load_image(image2_path)
